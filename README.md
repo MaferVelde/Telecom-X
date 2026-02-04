@@ -49,6 +49,10 @@ challenge-telecom-x/
 - **TelecomX_LATAM.ipynb**: Contiene todo el análisis exploratorio, desde la carga de datos hasta las conclusiones finales
 - **data/**: Carpeta con el dataset original en formato JSON (7,267 registros antes de ETL, 7,032 registros limpios)
 
+<h2>📊 Ejemplos de visualizaciones</h2>
+
+
+
 <h2>🚀 Ejecución del proyecto</h2>
 
 ### 📍 Google Colab 
