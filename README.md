@@ -49,9 +49,23 @@ challenge-telecom-x/
 - **TelecomX_LATAM.ipynb**: Contiene todo el análisis exploratorio, desde la carga de datos hasta las conclusiones finales
 - **data/**: Carpeta con el dataset original en formato JSON (7,267 registros antes de ETL, 7,032 registros limpios)
 
-<h2>📊 Ejemplos de visualizaciones</h2>
+<h2>📊 Ejemplos de gráficos del proyecto</h2>
 
+### 1. Distribución de Deserción
+![Churn Distribution](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/desercion.png)
+*Tasa general de deserción: 26.6% de los clientes abandonan el servicio*
 
+### 2. Antigüedad de los clientes
+![Tenure Analysis](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/antig%C3%BCedad.png)
+*Muestra de la antigüedad de todos los clientes, con picos en los primeros meses y en los 70 meses*
+
+### 3. Análisis de Antigüedad vs Deserción
+![Tenure Analysis](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/desercion%20antig%C3%BCedad.png)
+*El 53% de la deserción ocurre en los primeros 6 meses de servicio*
+
+### 4. Análisis de tipo de contrato y deserción
+![Contract Type](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/contrato.png)
+*Muestra la relación entre la deserción y el tipo de contrato del cliente*
 
 <h2>🚀 Ejecución del proyecto</h2>
 
