@@ -1,147 +1,145 @@
-<h1 align="left"> Telecom X: Análisis de deserción de clientes </h1>
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Numpy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
-![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+# 📡 Telecom X — Análisis de cancelación de clientes
 
-<h2>📖 Introducción</h2>
+### 🔎 Parte 1 · Extracción, transformación y análisis exploratorio
 
-<p>La compañía Telecom X ha recopilado información de sus clientes la cual se usará para conocer cual es la deserción de sus clientes y en base a que ocurre para así poder implementar las medidas necesarias para evitar la deserción.</p>
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Análisis-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Cálculo-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-Visualización-4C72B0)](https://seaborn.pydata.org/)
+[![Colab](https://img.shields.io/badge/Google_Colab-Abrir-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/MaferVelde/Telecom-X/blob/main/Telecom_X.ipynb)
 
-<h2>🎯 Objetivo</h2>
+**[Parte 1: análisis exploratorio](https://github.com/MaferVelde/Telecom-X)** · **[Parte 2: modelado predictivo](https://github.com/MaferVelde/Telecom-X-parte-2)**
 
-<p>En el análisis vamos a revisar la información sobre nuestros clientes para:
- 
-1.- Entender cual es la cantidad de clientes que desertan
+</div>
 
-2.- El motivo de la deserción
+---
 
-3.- Las características con las que cuentan los clientes que desertan
+## 📖 Descripción
 
-4.- Crear estrategias para disminuir la deserción
-</p>
+Telecom X enfrenta una tasa relevante de cancelación de clientes (*churn*). Esta primera fase desarrolla la extracción, limpieza, transformación y exploración de los datos para identificar patrones asociados con el abandono y proponer acciones de retención basadas en evidencia.
 
-<h2>📊 Puntos clave</h2>
+El conjunto final contiene **7,032 clientes**; **1,869 cancelaron el servicio**, equivalente a una tasa de churn de **26.6%**.
 
-<p>Los principales hallazgos son:
+## 🎯 Objetivos
 
-- La tasa de deserción es del **26.6%**, la cual es una cifra muy alta.
-- El periodo más crítico se encuentra en los primero 6 meses de servicio, con mayor deserción despues del primer mes.
-- Los clientes con menos vínculos familiares mostraron mayor deserción.
-- Los clientes con internet de fibra óptica sin protección de dispositivo ni soporte técnico mostraron mayor deserción.
-- Los clientes con contrato mensual mostraron mayor deserción.</p>
+- Extraer y normalizar los datos originales en formato JSON.
+- Evaluar la calidad de los datos y corregir inconsistencias.
+- Transformar variables para facilitar su análisis.
+- Explorar las características de los clientes y su relación con el churn.
+- Formular recomendaciones de retención.
+- Preparar los datos utilizados para el modelado de la Parte 2.
 
-<h2>📁 Estructura</h2>
+## 🔄 Flujo de trabajo
 
-```
-challenge-telecom-x/
-│
-├── TelecomX_LATAM.ipynb       # Notebook principal con el análisis completo
-├── data/
-│   └── TelecomX_Data.json     # Dataset original (7,267 registros → 7,032 después de ETL)
-└── README.md                  # Documentación del proyecto
-```
+1. 📥 **Extracción:** carga del JSON y normalización de estructuras anidadas.
+2. 🧹 **Transformación:** revisión de tipos, valores vacíos, nombres de columnas y variables binarias.
+3. 🧩 **Ingeniería de variables:** cálculo del cargo diario.
+4. 📊 **Análisis exploratorio:** estudio de variables demográficas, contractuales, económicas y de servicios.
+5. 🔍 **Análisis de churn:** comparación de perfiles y detección de patrones.
+6. 💡 **Conclusiones:** conversión de hallazgos en recomendaciones de negocio.
 
-- **TelecomX_LATAM.ipynb**: Contiene todo el análisis exploratorio, desde la carga de datos hasta las conclusiones finales
-- **data/**: Carpeta con el dataset original en formato JSON (7,267 registros antes de ETL, 7,032 registros limpios)
+## 🔑 Principales hallazgos
 
-<h2>📊 Ejemplos de gráficos del proyecto</h2>
+| Indicador | Resultado |
+|---|---:|
+| Clientes analizados | 7,032 |
+| Clientes que cancelaron | 1,869 |
+| Tasa general de churn | 26.6% |
+| Contrato entre quienes cancelaron | 88.6% mensual |
+| Internet entre quienes cancelaron | 69.4% fibra óptica |
+| Soporte entre quienes cancelaron | 77.4% sin soporte técnico |
+| Protección entre quienes cancelaron | 64.8% sin protección |
+| Pago entre quienes cancelaron | 57.3% cheque electrónico |
 
-### 1. Distribución de Deserción
-![Churn Distribution](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/desercion.png)
-*Tasa general de deserción: 26.6% de los clientes abandonan el servicio*
+La cancelación se concentra en clientes con **menor antigüedad**, especialmente durante los primeros meses. El género no presentó diferencias relevantes.
 
-### 2. Antigüedad de los clientes
-![Tenure Analysis](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/antig%C3%BCedad.png)
-*Muestra de la antigüedad de todos los clientes, con picos en los primeros meses y en los 70 meses*
+> Los resultados describen asociaciones observadas; no demuestran por sí solos relaciones causales.
 
-### 3. Análisis de Antigüedad vs Deserción
-![Tenure Analysis](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/desercion%20antig%C3%BCedad.png)
-*El 53% de la deserción ocurre en los primeros 6 meses de servicio*
+## 📊 Visualizaciones destacadas
 
-### 4. Análisis de tipo de contrato y deserción
-![Contract Type](https://github.com/MaferVelde/Telecom-X/blob/main/Graficos/contrato.png)
-*Muestra la relación entre la deserción y el tipo de contrato del cliente*
+### 1️⃣ Distribución de la cancelación
 
-<h2>🚀 Ejecución del proyecto</h2>
+![Distribución de clientes según cancelación](Graficos/desercion.png)
 
-### 📍 Google Colab 
+La tasa general de cancelación alcanza el **26.6%**.
 
-1. Haz clic en el siguiente enlace:  
-   🔗 [📊 Abrir Notebook en Google Colab](https://colab.research.google.com/github/MaferVelde/Telecom-X/blob/main/Telecom_X.ipynb)
+### 2️⃣ Antigüedad de los clientes
 
-2. El notebook se abrirá directamente en tu navegador
+![Distribución de la antigüedad](Graficos/antigüedad.png)
 
-3. En el lado superior derecho hacer click en **"Conectar"**
+La cartera contiene tanto clientes nuevos como un grupo importante de clientes con larga permanencia.
 
-4. Haz clic en **"Ejecutar todo"** en el menú `Runtime > Run all`
+### 3️⃣ Antigüedad y cancelación
 
-5. Todos los gráficos y análisis se generarán automáticamente
+![Relación entre antigüedad y cancelación](Graficos/desercion%20antigüedad.png)
 
-**Ventajas:**
-- ✅ No necesitas instalar nada en tu computadora
-- ✅ Funciona desde cualquier dispositivo con navegador
-- ✅ Incluye GPU gratuita si necesitas procesamiento adicional
+La frecuencia de cancelación es mayor durante los primeros meses y disminuye conforme aumenta la antigüedad.
 
-<h2>🚀 Tecnología utilizada</h2>
+### 4️⃣ Tipo de contrato y cancelación
 
-- 🐍 **Python 3.8+** – Lenguaje principal de análisis
-- 📊 **Pandas** – Manipulación y análisis de datos estructurados
-- 📈 **Matplotlib / Seaborn** – Visualización de datos y gráficos estadísticos
-- 🔢 **NumPy** – Operaciones numéricas y estadísticas
-- ☁️ **Google Colab** – Ejecución en la nube sin instalación local
-- 🌐 **Git / GitHub** – Control de versiones y colaboración
+![Relación entre contrato y cancelación](Graficos/contrato.png)
 
-<h2>💡 Recomendaciones</h2>
+Los contratos mensuales concentran la mayor parte de las cancelaciones observadas.
 
-De acuerdo a nuestro análisis se recomienda:
+## 💡 Recomendaciones de negocio
 
-1. Hacer un seguimiento de los nuevos clientes, sobre todo en los primeros 6 meses de servicio.
-2. Ofrecer incentivos para que los clientes realicen el cambio de contrato mensual a contrato por mayor tiempo.
-3. Ofrecer a nuestros clientes con mayor enfasis el servicio de protección de dispositivo y de soporte técnico para así mejorar su experiencia y darles un servicio más completo, sobre todo a los clientes con internet de fibra óptica, ya que son los que muestran mayor propención a desertar.
-4. Promociones como descuento a clientes que migren de contratos mensual a anual, de iguál manera para los clientes que realizan pagos con cheques para que cambien su metodo de pago a algún pago automático.
-5. Realizar encuestas de satisfacción para recibir sugerencias para mejorar el servicio. 
+1. Implementar acompañamiento durante los primeros seis meses del cliente.
+2. Incentivar la migración de contratos mensuales a contratos de uno o dos años.
+3. Promover soporte, seguridad, respaldo y protección como servicios de valor agregado.
+4. Incentivar el uso de métodos de pago automáticos.
+5. Analizar la experiencia de los clientes de fibra óptica.
+6. Aplicar encuestas de satisfacción y alertas tempranas a segmentos de mayor riesgo.
 
-<h2>📜 Licencia</h2>
+## 🛠️ Tecnologías y competencias
 
-Este proyecto se comparte bajo la licencia **MIT**.  
-Puedes usarlo, modificarlo y distribuirlo libremente citando la fuente.
+- **Python, Pandas y NumPy:** extracción, limpieza, transformación y análisis.
+- **Matplotlib y Seaborn:** visualización y comunicación de resultados.
+- **Google Colab:** desarrollo y ejecución reproducible.
+- **Git y GitHub:** documentación y control de versiones.
+- **Competencias:** ETL, calidad de datos, EDA, visualización e insights de negocio.
 
-```
-MIT License
+## 📁 Estructura del repositorio
 
-Copyright (c) 2026 Maria Fernanda Velderrain Parra
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```text
+Telecom-X/
+├── Graficos/               # Visualizaciones destacadas
+├── TelecomX_Data.json      # Datos originales
+├── Telecom_X.ipynb         # Notebook de ETL y análisis exploratorio
+└── README.md               # Documentación
 ```
 
-<h2>✨ Autor</h2>
+## 🚀 Cómo ejecutarlo
 
-Maria Fernanda Velderrain Parra
+### ☁️ Google Colab
 
-Data Analyst Junior 
+[![Abrir en Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MaferVelde/Telecom-X/blob/main/Telecom_X.ipynb)
 
-**📧 Contacto:**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-fernanda-velderrain-parra/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MaferVelde)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mafer_velde@live.com.mx)
+Abre el notebook, selecciona **Conectar** y ejecuta las celdas en orden o utiliza **Entorno de ejecución → Ejecutar todas**.
+
+### 💻 Entorno local
+
+```bash
+git clone https://github.com/MaferVelde/Telecom-X.git
+cd Telecom-X
+jupyter notebook Telecom_X.ipynb
+```
+
+Requiere `pandas`, `numpy`, `matplotlib` y `seaborn`.
+
+## 🔗 Continuación
+
+Los datos tratados se utilizan en **[Telecom X — Parte 2: predicción de churn](https://github.com/MaferVelde/Telecom-X-parte-2)**.
+
+## 👩‍💻 Autora
+
+**María Fernanda Velderrain Parra**<br>
+Ingeniera en Biotecnología en transición hacia Ciencia de Datos
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-María_Fernanda_Velderrain-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-fernanda-velderrain-parra/)
+[![GitHub](https://img.shields.io/badge/GitHub-MaferVelde-181717?logo=github&logoColor=white)](https://github.com/MaferVelde)
+
+## 🎓 Contexto académico
+
+Proyecto desarrollado como parte del **Challenge Telecom X** de **Alura Latam**, con fines educativos y de portafolio profesional.
