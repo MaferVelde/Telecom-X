@@ -16,6 +16,10 @@
 
 ---
 
+<p align="center">
+  <img src="assets/linkedin/00_portada_telecom_x.png" alt="Portada de Telecom X: análisis y predicción de cancelación de clientes" width="100%">
+</p>
+
 ## 📖 Descripción
 
 Telecom X enfrenta una tasa relevante de cancelación de clientes (*churn*). Esta primera fase desarrolla la extracción, limpieza, transformación y exploración de los datos para identificar patrones asociados con el abandono y proponer acciones de retención basadas en evidencia.
@@ -56,6 +60,10 @@ El conjunto final contiene **7,032 clientes**; **1,869 cancelaron el servicio**,
 La cancelación se concentra en clientes con **menor antigüedad**, especialmente durante los primeros meses. El género no presentó diferencias relevantes.
 
 > Los resultados describen asociaciones observadas; no demuestran por sí solos relaciones causales.
+
+![Distribución general de la cancelación de clientes](assets/linkedin/01_tasa_cancelacion.png)
+
+![Señales frecuentes entre los clientes que cancelaron](assets/linkedin/02_senales_clientes_churn.png)
 
 ## 📊 Visualizaciones destacadas
 
@@ -104,6 +112,11 @@ Los contratos mensuales concentran la mayor parte de las cancelaciones observada
 
 ```text
 Telecom-X/
+├── assets/
+│   └── linkedin/
+│       ├── 00_portada_telecom_x.png       # Portada del proyecto
+│       ├── 01_tasa_cancelacion.png        # Resumen de la tasa de churn
+│       └── 02_senales_clientes_churn.png  # Perfil del grupo con churn
 ├── Graficos/               # Visualizaciones destacadas
 ├── TelecomX_Data.json      # Datos originales
 ├── Telecom_X.ipynb         # Notebook de ETL y análisis exploratorio
